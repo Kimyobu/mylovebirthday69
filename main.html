@@ -12,6 +12,11 @@
 </head>
 
 <body>
+    <!-- Floating Music Toggle Button -->
+    <button class="music-toggle-btn" id="music-toggle-btn" aria-label="เปิด/ปิดเพลง" title="เปิด/ปิดเพลง">
+        <span class="music-icon" id="music-icon">🎵</span>
+    </button>
+
     <div class="app-container">
         <!-- Navigation Radio Controls -->
         <input type="radio" name="slide-toggle" id="tab-slide-1" checked class="slide-nav-radio">
@@ -69,8 +74,20 @@
 
                         <!-- Revealed: Cake + Note Paper (hidden until box opened) -->
                         <div class="s3-reveal" id="s3-reveal">
-                            <!-- Floating note paper - top right -->
-                            <button class="s3-note-btn" id="s3-note-btn">💌 อ่านจดหมาย</button>
+                            <!-- Title ข้างบน: นับวันเวลาที่อยู่ด้วยกันมา -->
+                            <div class="s3-together-wrapper" id="s3-together-wrapper">
+                                <div class="s3-together-title" id="s3-together-title"></div>
+                                <div class="s3-together-counter" id="s3-together-counter"></div>
+                            </div>
+
+                            <!-- Mini Envelope Widget -->
+                            <div class="s3-mini-envelope" id="s3-note-btn" role="button" tabindex="0" aria-label="เปิดอ่านจดหมาย">
+                                <div class="s3-mini-env-flap"></div>
+                                <div class="s3-mini-env-body">
+                                    <div class="s3-mini-env-heart">❤</div>
+                                </div>
+                                <div class="s3-mini-env-label" id="s3-mini-env-label">💌 จดหมายจากฉัน</div>
+                            </div>
 
                             <!-- Birthday Cake (ported from /cake) -->
                             <div class="s3-cake-scene">
@@ -113,6 +130,50 @@
             </div>
         </div>
     </div>
+    <!-- Letter Modal Overlay -->
+    <div id="letter-overlay" class="letter-overlay">
+        <!-- Phase 1: Envelope view -->
+        <div class="letter-modal" id="letter-modal">
+            <!-- Close button -->
+            <button class="letter-close-btn" id="letter-close-btn" aria-label="ปิดจดหมาย">✕</button>
+            <div class="letter-container" id="letter-container">
+                <div class="letter-valentines" id="letter-valentines">
+                    <div class="letter-envelope"></div>
+                    <div class="letter-front"></div>
+                    <!-- White card peeking out of envelope (ตาม dist template อยู่หลัง front) -->
+                    <div class="letter-card">
+                        <div class="letter-card-inner">
+                            <div class="letter-card-peek">💌</div>
+                        </div>
+                    </div>
+                    <div class="letter-hearts">
+                        <div class="lh-one"></div>
+                        <div class="lh-two"></div>
+                        <div class="lh-three"></div>
+                        <div class="lh-four"></div>
+                        <div class="lh-five"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="letter-shadow"></div>
+            <p class="letter-tap-hint" id="letter-tap-hint">แตะซองเพื่ออ่านจดหมาย 💕</p>
+        </div>
+
+        <!-- Phase 2: Full-screen reading card -->
+        <div class="letter-reading-card" id="letter-reading-card">
+            <button class="letter-reading-close" id="letter-reading-close" aria-label="ปิด">✕</button>
+            <div class="letter-reading-inner">
+                <div class="letter-reading-header">💌 จดหมายถึงคนสวย</div>
+                <div class="letter-reading-body" id="letter-reading-body">
+                    <!-- เนื้อหาจดหมายจาก config.js -->
+                </div>
+                <div class="letter-reading-footer">
+                    <button class="letter-reading-done" id="letter-reading-done">ปิดจดหมาย 💝</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="config.js"></script>
     <script src="script.js"></script>

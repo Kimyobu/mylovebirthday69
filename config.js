@@ -30,14 +30,16 @@ const CONFIG = {
 
     // ---- Slide 3: Surprise Box, Cake & Note ----
     slide3: {
-        clickHint: "คลิกเปิดเลย! 🎁",
-        noteBtnText: "💌 อ่านจดหมาย",
-        cakeTextTitle: "Happy Birthday! 🎂",
-        cakeTextSubtitle: "สุขสันต์วันเกิดนะค้าบคนสวย 💖",
+        startDate: "2025-12-25T00:00:00", // วันเริ่มต้นที่อยู่ด้วยกัน (25/12/68)
+        togetherPrefix: "เราอยู่ด้วยกันมาแล้ว",
+        clickHint: "คลิกเปิดเลย",
+        noteBtnText: "จดหมายจากนิว",
+        cakeTextTitle: "Happy Birthday",
+        cakeTextSubtitle: "สุขสันต์วันเกิดนะค้าบคนสวย ",
 
         // SweetAlert2 Modal สำหรับจดหมาย
         noteModal: {
-            title: "💌 จดหมายถึงคนสวย",
+            title: "จดหมายถึงคนสวย",
             htmlContent: `
                 <div style="
                     font-family: 'Itim', cursive;
@@ -70,6 +72,22 @@ const CONFIG = {
                 </div>
             `,
             confirmBtn: "ไปเปิดของขวัญเยย"
+        }
+    },
+
+    // ---- Audio: BGM & SFX Settings ----
+    audio: {
+        bgm: {
+            src: "assets/bgm/until_i_found_you.mp3",
+            volume: 0.05,
+            loop: true
+        },
+        sfx: {
+            click1: "assets/sfxs/click1.mp3",
+            click2: "assets/sfxs/click2.mp3",
+            click3: "assets/sfxs/click3.mp3",
+            letterOpen: "assets/sfxs/letterOpen.mp3",
+            correct: "assets/sfxs/correct.mp3",
         }
     }
 };
